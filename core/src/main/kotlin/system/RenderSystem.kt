@@ -2,13 +2,13 @@ package system
 
 import com.badlogic.ashley.core.Entity
 import com.badlogic.ashley.systems.SortedIteratingSystem
-import com.badlogic.gdx.graphics.g2d.SpriteBatch
+import com.badlogic.gdx.graphics.g2d.Batch
 import component.TextureComponent
 import component.TransformComponent
 import ktx.ashley.allOf
 import utilities.ZComparator
 
-class RenderSystem(private val batch: SpriteBatch) : SortedIteratingSystem (
+class RenderSystem(private val batch: Batch) : SortedIteratingSystem (
     allOf(TransformComponent::class, TextureComponent::class).get(),
     ZComparator()
 ) {
